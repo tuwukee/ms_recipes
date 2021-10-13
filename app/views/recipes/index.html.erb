@@ -1,0 +1,10 @@
+<h2>Recipes</h2>
+
+<div class="recipes-list">
+  <% @recipes.each do |recipe| %>
+    <a class="recipe-tile" href="<%= recipe_path(recipe.id) %>">
+      <img src="<%= recipe.photo&.url %>" />
+      <legend><%= recipe.title %></legend>
+    </a>
+  <% end %>
+</div>
