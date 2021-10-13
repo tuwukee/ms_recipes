@@ -17,17 +17,15 @@ gem "importmap-rails", ">= 0.3.4"
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
-gem 'hotwire-rails'
-
-gem "redis"
+gem "hotwire-rails"
 
 gem "contentful"
+gem "tailwindcss-rails"
+gem "redcarpet"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", ">= 1.4.4", require: false
 
-# Use Sass to process CSS
-# gem "sassc-rails", "~> 2.1"
 
 group :development, :test do
   # Start debugger with binding.b [https://github.com/ruby/debug]

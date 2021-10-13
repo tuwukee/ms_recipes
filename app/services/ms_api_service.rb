@@ -1,11 +1,9 @@
 class MsApiService
   CONTENT_TYPE = "recipe"
+  attr_reader :client
 
   def initialize
-  end
-
-  def client
-    @client ||= Contentful::Client.new(
+    @client = Contentful::Client.new(
       access_token: Rails.application.credentials.ms_access_token,
       environment: Rails.application.credentials.ms_env_id,
       space: Rails.application.credentials.ms_space_id,
