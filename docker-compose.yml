@@ -1,0 +1,28 @@
+version: "3.9"
+
+services:
+  web: &web
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: mc_recipes_web
+    env_file:
+      - .env
+    command: bundle exec rails s -p 3000 -b '0.0.0.0'
+    tty: true
+    stdin_open: true
+    volumes:
+      - .:/mc_recipes
+    ports:
+    - "3000:3000"
+  redis:
+    image: redis:4
+    container_name: mc_recipes_redis
+    expose:
+      - 6379
+    volumes:
+      - mc_recipes_redis:/var/lib/redis/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "-h", "localhost", "ping"]
+volumes:
+  mc_recipes_redis:
