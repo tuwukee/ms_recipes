@@ -1,0 +1,11 @@
+<%= turbo_frame_tag "modal" do %>
+  <div data-controller="modal" data-action="keyup@document->modal#handleKeyup">
+    <div class="modal-overlay absolute w-full h-full" data-action="click->modal#close"></div>
+
+    <div class="modal-container w-11/12 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto">
+      <%= turbo_frame_tag "modal-body" do %>
+        <%= yield %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
