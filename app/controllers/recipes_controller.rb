@@ -7,6 +7,10 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = @ms_service.get_recipe(params[:id])
+
+    if @recipe.nil?
+      raise ActionController::RoutingError.new("Not found")
+    end
   end
 
   private

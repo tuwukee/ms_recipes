@@ -7,7 +7,7 @@ class MsApiService
       access_token: Rails.application.credentials.ms_access_token,
       environment: Rails.application.credentials.ms_env_id,
       space: Rails.application.credentials.ms_space_id,
-      dynamic_entries: :auto,
+      dynamic_entries: :auto
     )
   end
 
