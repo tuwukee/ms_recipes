@@ -1,4 +1,4 @@
-class MsApiService
+class MsService
   CONTENT_TYPE = "recipe"
   attr_reader :client
 

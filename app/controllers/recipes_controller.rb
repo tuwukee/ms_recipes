@@ -1,21 +1,19 @@
 class RecipesController < ApplicationController
-  before_action :init_ms_service, only: [:index, :show]
-
   def index
-    @recipes = @ms_service.get_recipes
+    @recipes = ms_service.get_recipes
   end
 
   def show
-    @recipe = @ms_service.get_recipe(params[:id])
+    @recipe = ms_service.get_recipe(params[:id])
 
     if @recipe.nil?
-      raise ActionController::RoutingError.new("Not found")
+      render :file => "#{Rails.root}/public/404.html",  layout: false, status: :not_found
     end
   end
 
   private
 
-  def init_ms_service
-    @ms_service = MsApiService.new
+  def ms_service
+    @ms_service ||= MsService.new
   end
 end

@@ -5,21 +5,25 @@ It's built on Rails 7, Ruby 3, Hotwire, Tailwind, and Docker.
 
 ## Setup
 
-Set Rails credentials master key.
+The repo contains Rails master.key.
+Master key should be hidden in real-world apps, but that's a demo, so it's okay to expose it
 See https://guides.rubyonrails.org/security.html#custom-credentials for more info.
-(Master key should be hidden in real-world apps, but that's a demo, so it's okay to expose it)
-```
-3728c0bbf45696626cb36210d9f62ef9
-```
 
 The app lives in a docker container. Start the app with:
 
 ```
-$ docker-compose build
-$ docker-compose up
+docker-compose build
+docker-compose up
 ```
 
 You can modify docker-compose.yml in case your local docker-compose version doesn't match.
+
+## Tests
+
+Start the tests with:
+```
+docker-compose run web bundle exec rspec spec
+```
 
 ## Design
 
