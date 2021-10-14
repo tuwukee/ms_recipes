@@ -1,7 +1,7 @@
-<section class="flex flex-col">
+<section class="flex flex-col container mx-auto mt-20 px-5">
   <div class="flex flex-col md:flex-row md:justify-center items-start flex-wrap">
     <% @recipes.each do |recipe| %>
-        <div class="border border-gray-200 rounded mr-6 mt-6 max-w-lg min-w-300 hover:scale-105 transform transition-all duration-500">
+        <div class="border border-gray-200 rounded mr-3 ml-3 mt-3 mb-3 max-w-lg hover:scale-105 transform transition-all duration-500">
           <%= link_to recipe_path(recipe.id, modal: true), data: { "turbo-frame": "modal" } do %>
             <img src="<%= recipe.photo&.url %>" />
             <p class="p-5"><%= recipe.title %></p>

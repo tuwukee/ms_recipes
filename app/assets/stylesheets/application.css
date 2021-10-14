@@ -14,10 +14,6 @@
  *= require_self
  */
 
-.min-w-300 {
-  min-width: 300px;
-}
-
 .overview a {
   color: #28c8fb;
 }

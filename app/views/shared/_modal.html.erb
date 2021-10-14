@@ -1,8 +1,6 @@
 <%= turbo_frame_tag "modal" do %>
-  <div data-controller="modal" data-action="keyup@document->modal#handleKeyup">
-    <div class="modal-overlay absolute w-full h-full" data-action="click->modal#close"></div>
-
-    <div class="modal-container w-11/12 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto">
+  <div data-controller="modal" data-action="keyup@document->modal#handleKeyup" class="fixed z-10 w-full min-h-full overflow-auto top-0 left-0">
+    <div class="absolute mx-auto rounded overflow-auto w-full items-center justify-center flex min-h-full bg-gray-50 bg-opacity-80 py-4">
       <%= turbo_frame_tag "modal-body" do %>
         <%= yield %>
       <% end %>

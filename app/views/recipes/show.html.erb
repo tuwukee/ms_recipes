@@ -1,6 +1,6 @@
 <% if params[:modal] %>
   <%= render "shared/modal" do %>
-    <div class='flex mt-6 max-w-lg w-full bg-white mx-auto min-w-300'>
+    <div class="flex max-w-lg w-full bg-white mx-auto">
       <div class="relative text-white">
         <%= render "recipe", recipe: @recipe %>
         <div class="flex flex-row relative pb-10 space-x-4 z-10 mt-3 cursor-pointer">
@@ -12,12 +12,16 @@
     </div>
   <% end %>
 <% else %>
-  <div class="text-white">
-    <%= render "recipe", recipe: @recipe %>
-    <div class="flex flex-row relative pb-10 space-x-4 z-10 mt-8 cursor-pointer">
-      <a class="flex items-center py-2 px-4 rounded-full mx-auto text-white bg-red-500 hover:bg-red-700" href="<%= root_path %>">
-        <div class="text-sm text-white ml-2 mr-2">Back to All Recipes</div>
-      </a>
-    </div>
+  <div class="bg-black w-full">
+    <section class="container mx-auto mt-20 px-5">
+      <div class="text-white">
+        <%= render "recipe", recipe: @recipe %>
+        <div class="flex flex-row relative pb-10 space-x-4 z-10 mt-8 cursor-pointer">
+          <a class="flex items-center py-2 px-4 rounded-full mx-auto text-white bg-red-500 hover:bg-red-700" href="<%= root_path %>">
+            <div class="text-sm text-white ml-2 mr-2">Back to All Recipes</div>
+          </a>
+        </div>
+      </div>
+    </section>
   </div>
 <% end %>
